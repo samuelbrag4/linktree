@@ -125,7 +125,7 @@ main {
 /* Estilos da página Not Found */
 .notfound-card {
     width: 30vw; /* Largura da seção Not Found */
-    background-color: var(--color-secondary); /* Cor de fundo */
+    background-color: var(--color-card); /* Cor de fundo */
     border-radius: 1vh;
     box-shadow: var(--box-shadow); /* Sombra do card */
     padding: 5vh;
