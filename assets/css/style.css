@@ -54,8 +54,8 @@ main {
 
 /* Estilo da imagem de perfil no card */
 .linktree-card-img {
-    width: 10vh; /* Tamanho da imagem em altura */
-    height: 10vh;
+    width: 20vh; /* Tamanho da imagem em altura */
+    height: 20vh;
     border-radius: 50%; /* Imagem circular */
     object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
 }
@@ -108,6 +108,7 @@ main {
     border: 0.2vh solid var(--color-borda); /* Borda preta ao redor dos links */
     transition: all 0.3s ease-in-out; /* Transição suave para o hover */
 }
+
 
 /* Efeito hover nos links (ao passar o mouse) */
 .linktree-card-links-list-item-link:hover {
