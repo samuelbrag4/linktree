@@ -1,6 +1,6 @@
 /* Variáveis: */
 :root {
-    --color-fundo: #151515;
+    --color-fundo: linear-gradient(135deg, #151515, #232323);
     --color-card: #232323;
     --color-contorno-img: #464646;
     --color-borda: #000000;
@@ -10,6 +10,8 @@
     --color-secondary: #ffffff;
     --color-box-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
     --color-hover: #555555; /* Variável para o efeito hover */
+    --color-neon-green: #39ff14; /* Verde neon */
+    --transition-time: 0.3s; /* Tempo de transição para animações */
 }
 
 /* Estilos gerais aplicados a todos os elementos */
@@ -17,12 +19,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all var(--transition-time) ease-in-out; /* Adiciona transição suave */
 }
 
 /* Estilo base do corpo da página */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--color-fundo); /* Fundo escuro */
+    background: var(--color-fundo); /* Fundo em degradê */
+    color: var(--color-textos);
 }
 
 /* Centraliza o conteúdo principal no centro da página */
@@ -37,9 +41,14 @@ main {
 .linktree-card {
     width: 50vw; /* Largura do card principal */
     background-color: var(--color-card); /* Cor de fundo do card */
-    border-radius: 1vh; /* Bordas arredondadas */
-    box-shadow: var(--box-shadow); /* Sombra do card */
-    padding: 5vh; /* Espaçamento interno */
+    border-radius: 2vh; /* Bordas mais arredondadas */
+    box-shadow: var(--color-box-shadow); /* Sombra do card */
+    padding: 6vh; /* Espaçamento interno maior */
+    transition: transform var(--transition-time);
+}
+
+.linktree-card:hover {
+    transform: scale(1.05);
 }
 
 /* Estilos do cabeçalho do card (foto, nome e profissão) */
@@ -48,7 +57,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column; /* Elementos em coluna */
-    margin-bottom: 3vh;
+    margin-bottom: 4vh; /* Espaçamento maior */
     color: var(--color-textos); /* Cor do texto */
 }
 
@@ -58,12 +67,20 @@ main {
     height: 20vh;
     border-radius: 50%; /* Imagem circular */
     object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
+    box-shadow: 0 0 1vh var(--color-neon-green); /* Sombra verde neon */
+    transition: transform var(--transition-time);
+}
+
+.linktree-card-img:hover {
+    transform: rotate(5deg) scale(1.05);
 }
 
 /* Nome do usuário no card principal */
 .linktree-card-name {
     font-size: 2rem; /* Tamanho da fonte grande */
     font-weight: bold; /* Negrito */
+    color: var(--color-neon-green); /* Verde neon */
+    text-decoration: underline; /* Sublinhado */
 }
 
 /* Profissão do usuário no card principal */
@@ -72,9 +89,17 @@ main {
     color: var(--color-textos); /* Cor do texto */
 }
 
+/* Descrição abaixo do subtítulo */
+.linktree-card-description {
+    font-size: 1rem; /* Tamanho da fonte da descrição */
+    color: var(--color-textos); /* Cor do texto */
+    margin-top: 2vh; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+}
+
 /* Contêiner para os links (GitHub, LinkedIn, etc.) */
 .linktree-card-links {
-    margin-top: 3vh; /* Espaço superior para os links */
+    margin-top: 4vh; /* Espaço superior maior para os links */
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza os links */
@@ -89,7 +114,7 @@ main {
 
 /* Estilos para cada item de link da lista */
 .linktree-card-links-list-item {
-    margin-bottom: 2vh; /* Espaçamento entre os itens de link */
+    margin-bottom: 3vh; /* Espaçamento maior entre os itens de link */
     display: flex;
     justify-content: center; /* Centraliza os itens */
 }
@@ -99,9 +124,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%; /* Largura menor que o card principal */
-    height: 6vh; /* Altura dos links */
-    border-radius: 1vh; /* Bordas arredondadas nos links */
+    width: 75%; /* Largura maior que o card principal */
+    height: 7vh; /* Altura maior dos links */
+    border-radius: 2vh; /* Bordas mais arredondadas nos links */
     background-color: var(--color-links); /* Cor de fundo dos links */
     color: var(--color-textos); /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado dos links */
@@ -109,16 +134,16 @@ main {
     transition: all 0.3s ease-in-out; /* Transição suave para o hover */
 }
 
-
 /* Efeito hover nos links (ao passar o mouse) */
 .linktree-card-links-list-item-link:hover {
-    background-color: var(--hover-bg-color); /* Muda a cor ao passar o mouse */
+    background-color: var(--color-hover); /* Muda a cor ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Estilo da imagem do ícone dentro dos links */
 .linktree-card-links-list-item-link img {
-    width: 2.5vh; /* Tamanho da imagem de ícone */
-    height: 2.5vh;
+    width: 3vh; /* Tamanho maior da imagem de ícone */
+    height: 3vh;
     margin-right: 1vh; /* Espaçamento entre ícone e texto */
 }
 
@@ -126,9 +151,14 @@ main {
 .notfound-card {
     width: 30vw; /* Largura da seção Not Found */
     background-color: var(--color-card); /* Cor de fundo */
-    border-radius: 1vh;
-    box-shadow: var(--box-shadow); /* Sombra do card */
+    border-radius: 2vh;
+    box-shadow: var(--color-box-shadow); /* Sombra do card */
     padding: 5vh;
+    transition: transform var(--transition-time);
+}
+
+.notfound-card:hover {
+    transform: scale(1.05);
 }
 
 /* Estilo da imagem de perfil na página Not Found */
@@ -137,6 +167,11 @@ main {
     height: 10vh;
     border-radius: 50%; /* Imagem circular */
     object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
+    transition: transform var(--transition-time);
+}
+
+.notfound-card-img:hover {
+    transform: rotate(5deg) scale(1.05);
 }
 
 /* Nome do usuário na página Not Found */
@@ -174,7 +209,7 @@ main {
     justify-content: center;
     width: 100%; /* Largura total */
     height: 7vh;
-    border-radius: 1vh; /* Bordas arredondadas */
+    border-radius: 2vh; /* Bordas mais arredondadas */
     background-color: var(--color-primary); /* Cor de fundo */
     color: var(--color-secondary); /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado dos links */
@@ -183,7 +218,8 @@ main {
 
 /* Efeito hover nos links da página Not Found */
 .notfound-card-links-list-item-link:hover {
-    background-color: var(--hover-bg-color); /* Muda a cor ao passar o mouse */
+    background-color: var(--color-hover); /* Muda a cor ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Estilo da imagem do ícone dentro dos links na página Not Found */
@@ -191,6 +227,20 @@ main {
     width: 2.5vh; /* Tamanho da imagem do ícone */
     height: 2.5vh;
     margin-right: 1vh; /* Espaçamento entre ícone e texto */
+}
+
+/* Estilo do footer */
+.footer-card {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo meio transparente */
+    color: var(--color-textos);
+    text-align: center;
+    padding: 2vh;
+    border-radius: 0 0 2vh 2vh; /* Bordas arredondadas na parte inferior */
+    margin-top: 4vh; /* Espaçamento superior */
+}
+
+.footer-card p {
+    margin: 0.5vh 0;
 }
 
 /* Responsividade para telas menores */
