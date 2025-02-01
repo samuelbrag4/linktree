@@ -1,300 +1,259 @@
-/* Variáveis: */
+/* Variáveis */
 :root {
-    --color-fundo: linear-gradient(135deg, #151515, #232323);
-    --color-card: #232323;
-    --color-contorno-img: #464646;
-    --color-borda: #000000;
-    --color-links: #464646;
-    --color-textos: #fff;
-    --color-primary: #464646;
-    --color-secondary: #ffffff;
-    --color-box-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
-    --color-hover: #555555; /* Variável para o efeito hover */
-    --color-neon-green: #39ff14; /* Verde neon */
-    --transition-time: 0.3s; /* Tempo de transição para animações */
+    --bottom-color: #F3F3F3;
+    --header-color: #1e1e1e;
+    --marquee-color: #F3F3F3;
+    --font-1: 'Roboto', sans-serif;
+    --text-color: #f3f3f3;
 }
 
-/* Estilos gerais aplicados a todos os elementos */
+/* Resetando o CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all var(--transition-time) ease-in-out; /* Adiciona transição suave */
 }
 
-/* Estilo base do corpo da página */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--color-fundo); /* Fundo em degradê */
-    color: var(--color-textos);
-}
-
-/* Centraliza o conteúdo principal no centro da página */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Estilos da seção Linktree (card principal) */
-.linktree-card {
-    width: 50vw; /* Largura do card principal */
-    background-color: var(--color-card); /* Cor de fundo do card */
-    border-radius: 2vh; /* Bordas mais arredondadas */
-    box-shadow: var(--color-box-shadow); /* Sombra do card */
-    padding: 6vh; /* Espaçamento interno maior */
-    transition: transform var(--transition-time);
-}
-
-.linktree-card:hover {
-    transform: scale(1.05);
-}
-
-/* Estilos do cabeçalho do card (foto, nome e profissão) */
-.header-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* Elementos em coluna */
-    margin-bottom: 4vh; /* Espaçamento maior */
-    color: var(--color-textos); /* Cor do texto */
-}
-
-/* Estilo da imagem de perfil no card */
-.linktree-card-img {
-    width: 20vh; /* Tamanho da imagem em altura */
-    height: 20vh;
-    border-radius: 50%; /* Imagem circular */
-    object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
-    box-shadow: 0 0 1vh var(--color-neon-green); /* Sombra verde neon */
-    transition: transform var(--transition-time);
-}
-
-.linktree-card-img:hover {
-    transform: rotate(5deg) scale(1.05);
-}
-
-/* Nome do usuário no card principal */
-.linktree-card-name {
-    font-size: 2rem; /* Tamanho da fonte grande */
-    font-weight: bold; /* Negrito */
-    color: var(--color-neon-green); /* Verde neon */
-    text-decoration: underline; /* Sublinhado */
-}
-
-/* Profissão do usuário no card principal */
-.linktree-card-job {
-    font-size: 1.2rem; /* Tamanho da fonte da profissão */
-    color: var(--color-textos); /* Cor do texto */
-}
-
-/* Descrição abaixo do subtítulo */
-.linktree-card-description {
-    font-size: 1rem; /* Tamanho da fonte da descrição */
-    color: var(--color-textos); /* Cor do texto */
-    margin-top: 2vh; /* Espaçamento superior */
-    text-align: center; /* Centraliza o texto */
-}
-
-/* Contêiner para os links (GitHub, LinkedIn, etc.) */
-.linktree-card-links {
-    margin-top: 4vh; /* Espaço superior maior para os links */
+    background-color: var(--bottom-color);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os links */
+    align-items: center;
+    font-family: var(--font-1);
 }
 
-/* Lista não ordenada que contém os itens de links */
-.linktree-card-links-list {
-    list-style: none; /* Remove as bolinhas da lista */
-    padding: 0;
-    width: 100%; /* Ocupa toda a largura disponível */
-}
-
-/* Estilos para cada item de link da lista */
-.linktree-card-links-list-item {
-    margin-bottom: 3vh; /* Espaçamento maior entre os itens de link */
+.header {
     display: flex;
-    justify-content: center; /* Centraliza os itens */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 7.5rem;
+    background-color: var(--header-color);
+    position: fixed;
+    top: 0; /* Garante que o cabeçalho fique no topo */
+    left: 0;
+    z-index: 1000; /* Garante que o cabeçalho ficará acima de outros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para dar um efeito de sobreposição */
 }
 
-/* Estilo dos links individuais (GitHub, LinkedIn, etc.) */
-.linktree-card-links-list-item-link {
+/* Estilo para o container do marquee */
+.marquee-container {
+    width: 100%;
+    height: 1.7rem;
+    overflow: hidden; /* Esconde o texto fora da área visível */
+    position: relative;
+    background-color: #424242;
+    margin: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 75%; /* Largura maior que o card principal */
-    height: 7vh; /* Altura maior dos links */
-    border-radius: 2vh; /* Bordas mais arredondadas nos links */
-    background-color: var(--color-links); /* Cor de fundo dos links */
-    color: var(--color-textos); /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    border: 0.2vh solid var(--color-borda); /* Borda preta ao redor dos links */
-    transition: all 0.3s ease-in-out; /* Transição suave para o hover */
 }
 
-/* Efeito hover nos links (ao passar o mouse) */
-.linktree-card-links-list-item-link:hover {
-    background-color: var(--color-hover); /* Muda a cor ao passar o mouse */
-    transform: scale(1.05);
+/* Estilo para o texto que vai se mover */
+.marquee-text {
+    position: absolute;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    font-size: 24px;
+    color: var(--font-1);
+    animation: marquee 15s linear infinite; /* Aplica a animação */
+    font-size: 15px;
+    color: var(--text-color);
+    font-family: var(--font-1);
+    font-weight: 600;
 }
 
-/* Estilo da imagem do ícone dentro dos links */
-.linktree-card-links-list-item-link img {
-    width: 3vh; /* Tamanho maior da imagem de ícone */
-    height: 3vh;
-    margin-right: 1vh; /* Espaçamento entre ícone e texto */
+/* Definindo a animação do texto */
+@keyframes marquee {
+    0% {
+        left: 100%; /* Começa fora da tela à direita */
+    }
+    100% {
+        left: -100%; /* Termina fora da tela à esquerda */
+    }
 }
 
-/* Estilos da página Not Found */
-.notfound-card {
-    width: 30vw; /* Largura da seção Not Found */
-    background-color: var(--color-card); /* Cor de fundo */
-    border-radius: 2vh;
-    box-shadow: var(--color-box-shadow); /* Sombra do card */
-    padding: 5vh;
-    transition: transform var(--transition-time);
-}
-
-.notfound-card:hover {
-    transform: scale(1.05);
-}
-
-/* Estilo da imagem de perfil na página Not Found */
-.notfound-card-img {
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%; /* Imagem circular */
-    object-fit: cover; /* Ajusta a imagem ao tamanho sem distorcer */
-    transition: transform var(--transition-time);
-}
-
-.notfound-card-img:hover {
-    transform: rotate(5deg) scale(1.05);
-}
-
-/* Nome do usuário na página Not Found */
-.notfound-card-name {
-    font-size: 2rem; /* Tamanho da fonte grande */
-    font-weight: bold; /* Negrito */
-}
-
-/* Profissão do usuário na página Not Found */
-.notfound-card-job {
-    font-size: 1.2rem; /* Tamanho da fonte da profissão */
-    color: var(--color-primary); /* Cor da profissão */
-}
-
-/* Contêiner para os links na página Not Found */
-.notfound-card-links {
-    margin-top: 3vh;
-}
-
-/* Lista de links na página Not Found */
-.notfound-card-links-list {
-    list-style: none; /* Remove as bolinhas da lista */
-    padding: 0;
-}
-
-/* Estilos para cada item de link na página Not Found */
-.notfound-card-links-list-item {
-    margin-bottom: 2vh;
-}
-
-/* Estilos dos links individuais na página Not Found */
-.notfound-card-links-list-item-link {
+.header-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center; /* Opcional: para centralizar o conteúdo */
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.header-container ul {
+    list-style: none; /* Remove as bolinhas */
+    padding-left: 0; /* Remove o padding à esquerda */
+    margin: 0; /* Remove margens extras, caso existam */
+}
+
+.texts-header {
+    width: 39%;
+    height: 100%;
+    display: flex;
     justify-content: center;
-    width: 100%; /* Largura total */
-    height: 7vh;
-    border-radius: 2vh; /* Bordas mais arredondadas */
-    background-color: var(--color-primary); /* Cor de fundo */
-    color: var(--color-secondary); /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    font-family: var(--font-1);
+    margin-left: 5rem;
+    gap: 0.4rem;
 }
 
-/* Efeito hover nos links da página Not Found */
-.notfound-card-links-list-item-link:hover {
-    background-color: var(--color-hover); /* Muda a cor ao passar o mouse */
-    transform: scale(1.05);
+.header-nav {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--text-color);
+    justify-content: flex-end;
+    margin-right: 5rem;
 }
 
-/* Estilo da imagem do ícone dentro dos links na página Not Found */
-.notfound-card-links-list-item-link img {
-    width: 2.5vh; /* Tamanho da imagem do ícone */
-    height: 2.5vh;
-    margin-right: 1vh; /* Espaçamento entre ícone e texto */
+.header-nav li {
+    display: inline;
 }
 
-/* Estilo do footer */
-.footer-card {
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo meio transparente */
-    color: var(--color-textos);
+.header-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 5rem;
+    font-family: var(--font-1);
+    font-weight: 700;
+}
+
+/* Estilo para sessão de redes */
+.my-networks-container {
+    margin: 9rem 1rem;    width: 70%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Dividindo a tela em três colunas de tamanhos iguais */
+    grid-template-rows: auto auto; /* Duas linhas */
+    grid-template-areas: 
+        "left top right"
+        "left bottom right"; /* Organizando a área da grid */
+    gap: 5px; /* Menor espaçamento entre os itens */
+    justify-items: center; /* Centralizando os itens na horizontal */
+    align-items: center; /* Centralizando os itens na vertical */
+}
+
+/* Animação de flutuação */
+@keyframes floating {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Subir 10px */
+    }
+    100% {
+        transform: translateY(0); /* Voltar para a posição inicial */
+    }
+}
+
+.large-card {
+    background-color: #000000;
+    margin: 1rem;  /* Margem mais estreita */
+    height: 25rem; /* Ajuste para tamanho proporcional */
+    width: 15rem;  /* Ajuste para tamanho proporcional */
+    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+}
+
+.card {
+    background-color: #000000;
+    width: 25rem;  /* Tornando a largura igual ao 'large-card' */
+    height: 11rem; /* Tornando a altura igual ao 'large-card' para ficarem alinhados */
+    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+}
+
+/* Associando as áreas de grid */
+.large-card:nth-child(1) {
+    grid-area: left;
+}
+
+.large-card:nth-child(4) {
+    grid-area: right;
+}
+
+.contact-section {
+    width: 70%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dividindo a tela em três colunas de tamanhos iguais */
+    grid-template-rows: auto auto; /* Duas linhas */
+    grid-template-areas: 
+        "left top right"
+        "left bottom right"; /* Organizando a área da grid */
+    gap: 10px; /* Menor espaçamento entre os itens */
+    justify-items: center; /* Centralizando os itens na horizontal */
+    align-items: center; /* Centralizando os itens na vertical */
+}
+
+/* Animação de flutuação */
+@keyframes floating {
+    0% {
+        transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Subir 10px */
+    }
+    100% {
+        transform: translateY(0); /* Voltar para a posição inicial */
+    }
+}
+
+/* Estilo comum para todos os cards */
+.contact-large-card {
+    background-color: #000000;
+    margin: 1rem;  /* Margem mais estreita */
+    height: 25rem; /* Ajuste para tamanho proporcional */
+    width: 95%; /* Tornando os cards do mesmo tamanho */
+    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+}
+
+/* Associando as áreas de grid */
+.contact-large-card:nth-child(1) {
+    grid-area: left;
+}
+
+.contact-card:nth-child(2) {
+    grid-area: top;
+}
+
+.contact-card:nth-child(3) {
+    grid-area: bottom;
+}
+
+.contact-large-card:nth-child(4) {
+    grid-area: right;
+}
+
+/* Estilo do Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 2vh;
-    border-radius: 0 0 2vh 2vh; /* Bordas arredondadas na parte inferior */
-    margin-top: 4vh; /* Espaçamento superior */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-.footer-card p {
-    margin: 0.5vh 0;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 1024px) {
-    /* Para tablets e telas médias */
-    .linktree-card {
-        width: 70vw; /* Aumenta a largura para tablets */
-        padding: 4vh;
-    }
-
-    .linktree-card-img {
-        width: 9vh;
-        height: 9vh;
-    }
-
-    .linktree-card-name {
-        font-size: 1.8rem;
-    }
-
-    .linktree-card-job {
-        font-size: 1.1rem;
-    }
-
-    .linktree-card-links-list-item-link {
-        width: 85%; /* Aumenta o tamanho dos links em tablets */
-    }
+.footer .social-links {
+    margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-    /* Para celulares e telas pequenas */
-    .linktree-card {
-        width: 90vw; /* Aumenta a largura para ocupar quase toda a tela */
-        padding: 3vh;
-    }
+.footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
 
-    .linktree-card-img {
-        width: 8vh;
-        height: 8vh;
-    }
-
-    .linktree-card-name {
-        font-size: 1.6rem;
-    }
-
-    .linktree-card-job {
-        font-size: 1rem;
-    }
-
-    .linktree-card-links-list-item-link {
-        width: 100%; /* Links ocupam toda a largura do card no celular */
-    }
-
-    .linktree-card-links-list-item-link img {
-        width: 2vh; /* Diminui o tamanho dos ícones nos links */
-        height: 2vh;
-    }
+.footer .social-links a:hover {
+    text-decoration: underline;
 }

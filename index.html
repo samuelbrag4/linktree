@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree</title>
+    <title>LinkTree</title>
 
     <link rel="stylesheet" href="assets/css/global.css">
-
 </head>
 <body>
 
-    <main>
-        <section class="linktree-card">
-            <header class="header-card">
-                <img src="assets/images/eu.png" alt="Foto de Perfil" class="linktree-card-img">
-                <h1 class="linktree-card-name">Samuel Braga</h1>
-                <p class="linktree-card-job">Desenvolvedor de Software</p>
-                <p class="linktree-card-description">Apaixonado por tecnologia e desenvolvimento de soluções inovadoras.</p>
-            </header>
+    <header class="header">
+        <section class="marquee-container">
+            <div class="marquee-text">
+                Bem-vindo ao meu LinkTree! Aqui você encontra links para minhas redes sociais como GitHub, LinkedIn, CodePen e Dev.to, além de formas de entrar em contato comigo pelo meu WhatsApp profissional e email profissional.
+            </div>
+        </section>
 
-            <nav class="linktree-card-links">
-                <ul class="linktree-card-links-list">
-                    <li class="linktree-card-links-list-item">
-                        <a href="https://github.com/samuelbrag4" target="_blank" class="linktree-card-links-list-item-link" aria-label="GitHub">
-                            <img src="assets/icons/github.png" alt="GitHub"> GitHub
-                        </a>
-                    </li>
-                    <li class="linktree-card-links-list-item">
-                        <a href="https://www.linkedin.com/in/samuelbrag4/" target="_blank" class="linktree-card-links-list-item-link" aria-label="LinkedIn">
-                            <img src="assets/icons/linkedin.png" alt="LinkedIn"> LinkedIn
-                        </a>
-                    </li>
-                    <li class="linktree-card-links-list-item">
-                        <a href="https://codepen.io/SamuelBrag4" target="_blank" class="linktree-card-links-list-item-link" aria-label="CodePen">
-                            <img src="assets/icons/codepen.png" alt="CodePen"> CodePen
-                        </a>
-                    </li>
-                    <li class="linktree-card-links-list-item">
-                        <a href="assets/pages/notfound.html" target="_blank" class="linktree-card-links-list-item-link" aria-label="Portfólio">
-                            <img src="assets/icons/User.png" alt="Portfólio"> Portfólio
-                        </a>
-                    </li>
+        <section class="header-container">
+            <hgroup class="texts-header">
+                <h1>LinkTree</h1>
+                <h3>Samuel Braga</h3>
+            </hgroup>
+
+            <nav class="header-nav"> 
+                <ul class="nav-links">
+                    <li><a href="#redes">Redes</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-
-            <footer class="footer-card">
-                <p>samuelbraga1306@gmail.com</p>
-                <p>&copy; 2023 Samuel Braga. Todos os direitos reservados.</p>
-            </footer>
         </section>
-    </main>
+    </header>
 
+    <section class="my-networks-container" id="redes">
+        <div class="large-card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="large-card"></div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-large-card"></div>
+        <div class="contact-large-card"></div>
+    </section>    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Desenvolvido por Samuel Braga - Todos os direitos reservados &copy; 2025</p>
+            <div class="social-links">
+                <a href="https://github.com/SamuelBraga" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/samuelbraga" target="_blank">LinkedIn</a>
+                <a href="https://codepen.io/SamuelBraga" target="_blank">CodePen</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/global.js"></script>
 </body>
 </html>
