@@ -21,3 +21,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Função para verificar se o dispositivo é móvel
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Exibir a mensagem se for um dispositivo móvel
+if (isMobileDevice()) {
+    document.getElementById('message').style.display = 'block';
+}

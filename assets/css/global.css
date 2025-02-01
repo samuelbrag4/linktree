@@ -5,6 +5,7 @@
     --marquee-color: #F3F3F3;
     --font-1: 'Roboto', sans-serif;
     --text-color: #f3f3f3;
+    --color-card: #A1A1A1;
 }
 
 /* Resetando o CSS */
@@ -151,18 +152,24 @@ body {
 }
 
 .large-card {
-    background-color: #000000;
+    background-color: var(--color-card);
     margin: 1rem;  /* Margem mais estreita */
     height: 25rem; /* Ajuste para tamanho proporcional */
     width: 15rem;  /* Ajuste para tamanho proporcional */
     animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
-    background-color: #000000;
+    background-color: var(--color-card);
     width: 25rem;  /* Tornando a largura igual ao 'large-card' */
     height: 11rem; /* Tornando a altura igual ao 'large-card' para ficarem alinhados */
     animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Associando as áreas de grid */
@@ -203,11 +210,14 @@ body {
 
 /* Estilo comum para todos os cards */
 .contact-large-card {
-    background-color: #000000;
+    background-color: var(--color-card);
     margin: 1rem;  /* Margem mais estreita */
     height: 25rem; /* Ajuste para tamanho proporcional */
     width: 95%; /* Tornando os cards do mesmo tamanho */
     animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Associando as áreas de grid */
@@ -256,4 +266,30 @@ body {
 
 .footer .social-links a:hover {
     text-decoration: underline;
+}
+
+.card-image {
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+}
+
+#message {
+    display: none;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+#message a {
+    display: block;
+    color: #007BFF;
+    margin: 10px 0;
+    text-decoration: none;
 }
