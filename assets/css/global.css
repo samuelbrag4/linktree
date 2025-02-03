@@ -1,11 +1,11 @@
 /* Variáveis */
 :root {
-    --bottom-color: #F3F3F3;
-    --header-color: #1e1e1e;
+    --bottom-color: #f4f2ee;
+    --header-color: #0878b4;
     --marquee-color: #F3F3F3;
-    --font-1: 'Roboto', sans-serif;
+    --font-1: Arial, sans-serif;
     --text-color: #f3f3f3;
-    --color-card: #A1A1A1;
+    --color-card: #ffffff;
 }
 
 /* Resetando o CSS */
@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: var(--font-1);
 }
 
@@ -27,23 +28,21 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    height: 7.5rem;
-    background-color: var(--header-color);
+    width: 80%;
+    height: 7rem;
     position: fixed;
-    top: 0; /* Garante que o cabeçalho fique no topo */
-    left: 0;
-    z-index: 1000; /* Garante que o cabeçalho ficará acima de outros elementos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para dar um efeito de sobreposição */
+    top: 0;
+    z-index: 1000;
+    background-color: var(--header-color);
+    border-radius: 0 0 2rem 2rem;
 }
 
 /* Estilo para o container do marquee */
 .marquee-container {
     width: 100%;
     height: 1.7rem;
-    overflow: hidden; /* Esconde o texto fora da área visível */
+    overflow: hidden;
     position: relative;
-    background-color: #424242;
     margin: 0.5rem;
     display: flex;
     align-items: center;
@@ -53,10 +52,10 @@ body {
 /* Estilo para o texto que vai se mover */
 .marquee-text {
     position: absolute;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    white-space: nowrap;
     font-size: 24px;
     color: var(--font-1);
-    animation: marquee 15s linear infinite; /* Aplica a animação */
+    animation: marquee 15s linear infinite;
     font-size: 15px;
     color: var(--text-color);
     font-family: var(--font-1);
@@ -66,10 +65,13 @@ body {
 /* Definindo a animação do texto */
 @keyframes marquee {
     0% {
-        left: 100%; /* Começa fora da tela à direita */
+        left: 100%;
+        /* Começa fora da tela à direita */
     }
+
     100% {
-        left: -100%; /* Termina fora da tela à esquerda */
+        left: -100%;
+        /* Termina fora da tela à esquerda */
     }
 }
 
@@ -78,15 +80,15 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center; /* Opcional: para centralizar o conteúdo */
+    justify-content: center;
     text-decoration: none;
     color: var(--text-color);
 }
 
 .header-container ul {
-    list-style: none; /* Remove as bolinhas */
-    padding-left: 0; /* Remove o padding à esquerda */
-    margin: 0; /* Remove margens extras, caso existam */
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 .texts-header {
@@ -121,55 +123,70 @@ body {
     margin: 5rem;
     font-family: var(--font-1);
     font-weight: 700;
+    transition: color 0.5s;
+}
+
+.header-nav a:hover {
+    color: black;
 }
 
 /* Estilo para sessão de redes */
 .my-networks-container {
-    margin: 9rem 1rem;    width: 70%;
+    margin: 9rem 1rem;
+    width: 70%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  /* Dividindo a tela em três colunas de tamanhos iguais */
-    grid-template-rows: auto auto; /* Duas linhas */
-    grid-template-areas: 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
         "left top right"
-        "left bottom right"; /* Organizando a área da grid */
-    gap: 5px; /* Menor espaçamento entre os itens */
-    justify-items: center; /* Centralizando os itens na horizontal */
-    align-items: center; /* Centralizando os itens na vertical */
+        "left bottom right";
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
 }
 
 /* Animação de flutuação */
 @keyframes floating {
     0% {
-        transform: translateY(0); /* Posição inicial */
+        transform: translateY(0);
+        /* Posição inicial */
     }
+
     50% {
-        transform: translateY(-10px); /* Subir 10px */
+        transform: translateY(-10px);
+        /* Subir 10px */
     }
+
     100% {
-        transform: translateY(0); /* Voltar para a posição inicial */
+        transform: translateY(0);
+        /* Voltar para a posição inicial */
     }
 }
 
 .large-card {
     background-color: var(--color-card);
-    margin: 1rem;  /* Margem mais estreita */
-    height: 25rem; /* Ajuste para tamanho proporcional */
-    width: 15rem;  /* Ajuste para tamanho proporcional */
-    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    margin: 1rem;
+    height: 25rem;
+    width: 15rem;
+    animation: floating 2s ease-in-out infinite;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 30px 0px 30px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.192);
 }
 
 .card {
     background-color: var(--color-card);
-    width: 25rem;  /* Tornando a largura igual ao 'large-card' */
-    height: 11rem; /* Tornando a altura igual ao 'large-card' para ficarem alinhados */
-    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    width: 25rem;
+    height: 11rem;
+    animation: floating 2s ease-in-out infinite;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 30px 0px 30px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.192);
 }
 
 /* Associando as áreas de grid */
@@ -185,39 +202,47 @@ body {
     width: 70%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dividindo a tela em três colunas de tamanhos iguais */
-    grid-template-rows: auto auto; /* Duas linhas */
-    grid-template-areas: 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
         "left top right"
-        "left bottom right"; /* Organizando a área da grid */
-    gap: 10px; /* Menor espaçamento entre os itens */
-    justify-items: center; /* Centralizando os itens na horizontal */
-    align-items: center; /* Centralizando os itens na vertical */
+        "left bottom right";
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
 }
 
 /* Animação de flutuação */
 @keyframes floating {
     0% {
-        transform: translateY(0); /* Posição inicial */
+        transform: translateY(0);
+        /* Posição inicial */
     }
+
     50% {
-        transform: translateY(-10px); /* Subir 10px */
+        transform: translateY(-10px);
+        /* Subir 10px */
     }
+
     100% {
-        transform: translateY(0); /* Voltar para a posição inicial */
+        transform: translateY(0);
+        /* Voltar para a posição inicial */
     }
 }
 
 /* Estilo comum para todos os cards */
 .contact-large-card {
     background-color: var(--color-card);
-    margin: 1rem;  /* Margem mais estreita */
-    height: 25rem; /* Ajuste para tamanho proporcional */
-    width: 95%; /* Tornando os cards do mesmo tamanho */
-    animation: floating 2s ease-in-out infinite; /* Aplicando a animação */
+    margin: 1rem;
+    height: 13rem;
+    width: 95%;
+    animation: floating 2s ease-in-out infinite;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 30px 0px 30px 0px;
+    margin-bottom: 6rem;
+    border: 1px solid rgba(0, 0, 0, 0.192);
 }
 
 /* Associando as áreas de grid */
@@ -239,13 +264,14 @@ body {
 
 /* Estilo do Footer */
 .footer {
-    background-color: #333;
+    background-color: var(--header-color);
     color: white;
     padding: 20px;
     text-align: center;
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 80%;
+    border-radius: 2rem 2rem 0 0;
 }
 
 .footer-content {
@@ -272,24 +298,135 @@ body {
     width: 10rem;
     height: auto;
     object-fit: cover;
+    margin: 1rem;
 }
 
-#message {
-    display: none;
-    background-color: #f2f2f2;
-    color: #333;
-    padding: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+.card-image-simple {
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+    margin: 0.5rem;
 }
-#message a {
-    display: block;
-    color: #007BFF;
-    margin: 10px 0;
-    text-decoration: none;
+
+/* Responsividade para tablets */
+@media (max-width: 1108px) {
+    .header {
+        width: 100%;
+        height: 12rem;
+        flex-direction: column;
+    }
+
+    .texts-header {
+        width: 80%;
+        margin-left: 2rem;
+        font-size: 26px;
+    }
+
+    .header-nav {
+        width: 50%;
+        margin-right: 2rem;
+    }
+
+    .header-nav a {
+        margin: 2rem;
+        font-size: 14px;
+        font-size: 30px;
+    }
+
+    .my-networks-container,
+    .contact-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 18rem;
+    }
+
+    .large-card,
+    .contact-large-card,
+    .card {
+        width: 80%;
+        /* Reduz a largura para evitar ocupar toda a tela */
+        max-width: 300px;
+        /* Define um limite máximo */
+        height: auto;
+        /* Ajusta a altura automaticamente */
+        aspect-ratio: 1 / 1;
+        /* Mantém um formato mais quadrado */
+        margin-bottom: 1rem;
+        /* Adiciona espaçamento entre os elementos */
+        padding: 1rem;
+    }
+
+    .card {
+        margin: 1rem;
+    }
+
+    /* Estilo para o container do marquee */
+    .marquee-container {
+        height: 3rem;
+    }
+
+    /* Estilo para o texto que vai se mover */
+    .marquee-text {
+        font-size: 20px;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 915px) {
+    .header {
+        height: 13rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .texts-header {
+        width: 100%;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-nav {
+        width: 100%;
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-nav a {
+        margin: 1rem;
+        font-size: 12px;
+        font-size: 26px;
+        display: flex;
+    }
+
+    .my-networks-container,
+    .contact-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .large-card,
+    .contact-large-card,
+    .card {
+        width: 90%;
+        /* Ocupará menos espaço lateralmente */
+        max-width: 250px;
+        /* Mantém um limite para não ficar muito grande */
+        height: auto;
+        /* Ajusta automaticamente */
+        aspect-ratio: 1 / 1;
+        /* Mantém um formato quadrado */
+        margin-bottom: 1rem;
+        /* Adiciona espaçamento entre os elementos */
+        padding: 1rem;
+    }
+
+    .card {
+        margin: 1rem;
+    }
 }
