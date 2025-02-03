@@ -333,41 +333,42 @@ body {
         font-size: 30px;
     }
 
-    .my-networks-container,
-    .contact-section {
+    .my-networks-container {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 18rem;
+        margin-top: 15rem;
+    }
+
+    .contact-section {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
     }
 
     .large-card,
     .contact-large-card,
     .card {
         width: 80%;
-        /* Reduz a largura para evitar ocupar toda a tela */
         max-width: 300px;
-        /* Define um limite máximo */
         height: auto;
-        /* Ajusta a altura automaticamente */
         aspect-ratio: 1 / 1;
-        /* Mantém um formato mais quadrado */
-        margin-bottom: 1rem;
-        /* Adiciona espaçamento entre os elementos */
         padding: 1rem;
+        margin: 0;
     }
 
     .card {
-        margin: 1rem;
+        margin: 0.6rem;
     }
 
-    /* Estilo para o container do marquee */
     .marquee-container {
         height: 3rem;
     }
 
-    /* Estilo para o texto que vai se mover */
     .marquee-text {
         font-size: 20px;
     }
@@ -379,6 +380,15 @@ body {
         height: 13rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .texts-header {
@@ -390,9 +400,11 @@ body {
 
     .header-nav {
         width: 100%;
-        margin-right: 1rem;
         display: flex;
-        flex-direction: column;
+    }
+
+    .header-nav ul {
+        display: flex;
     }
 
     .header-nav a {
