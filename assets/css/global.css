@@ -16,7 +16,9 @@
 }
 
 body {
-    background-color: var(--bottom-color);
+    border: 5px solid #000;
+    background: linear-gradient(180deg, #CECECE 17.12%, #B9B8B8 52.09%, #575656 87.07%);
+    box-shadow: 10px 80px 100px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,52 +29,13 @@ body {
 .header {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
     width: 80%;
     height: 7rem;
-    position: fixed;
-    top: 0;
     z-index: 1000;
-    background-color: var(--header-color);
-    border-radius: 0 0 2rem 2rem;
-}
-
-/* Estilo para o container do marquee */
-.marquee-container {
-    width: 100%;
-    height: 1.7rem;
-    overflow: hidden;
-    position: relative;
-    margin: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Estilo para o texto que vai se mover */
-.marquee-text {
-    position: absolute;
-    white-space: nowrap;
-    font-size: 24px;
-    color: var(--font-1);
-    animation: marquee 15s linear infinite;
-    font-size: 15px;
-    color: var(--text-color);
-    font-family: var(--font-1);
-    font-weight: 600;
-}
-
-/* Definindo a animação do texto */
-@keyframes marquee {
-    0% {
-        left: 100%;
-        /* Começa fora da tela à direita */
-    }
-
-    100% {
-        left: -100%;
-        /* Termina fora da tela à esquerda */
-    }
+    border-radius: 25px;
+    background: #242424;
 }
 
 .header-container {
@@ -85,49 +48,13 @@ body {
     color: var(--text-color);
 }
 
-.header-container ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
 .texts-header {
-    width: 39%;
-    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-family: var(--font-1);
     margin-left: 5rem;
     gap: 0.4rem;
-}
-
-.header-nav {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: var(--text-color);
-    justify-content: flex-end;
-    margin-right: 5rem;
-}
-
-.header-nav li {
-    display: inline;
-}
-
-.header-nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    margin: 5rem;
-    font-family: var(--font-1);
-    font-weight: 700;
-    transition: color 0.5s;
-}
-
-.header-nav a:hover {
-    color: black;
 }
 
 /* Estilo para sessão de redes */
@@ -363,14 +290,6 @@ body {
 
     .card {
         margin: 0.6rem;
-    }
-
-    .marquee-container {
-        height: 3rem;
-    }
-
-    .marquee-text {
-        font-size: 20px;
     }
 }
 
