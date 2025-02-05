@@ -1,363 +1,89 @@
-/* Variáveis */
-:root {
-    --bottom-color: #f4f2ee;
-    --header-color: #0878b4;
-    --marquee-color: #F3F3F3;
-    --font-1: Arial, sans-serif;
-    --text-color: #f3f3f3;
-    --color-card: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-/* Resetando o CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
 }
 
 body {
-    border: 5px solid #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
     background: linear-gradient(180deg, #CECECE 17.12%, #B9B8B8 52.09%, #575656 87.07%);
     box-shadow: 10px 80px 100px 10px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-1);
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin: -2rem 0 0 0;
     width: 80%;
-    height: 7rem;
+    height: 6rem;
     z-index: 1000;
     border-radius: 25px;
     background: #242424;
 }
 
 .header-container {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
 }
 
 .texts-header {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    font-family: var(--font-1);
-    margin-left: 5rem;
-    gap: 0.4rem;
-}
-
-/* Estilo para sessão de redes */
-.my-networks-container {
-    margin: 9rem 1rem;
-    width: 70%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "left top right"
-        "left bottom right";
-    gap: 5px;
-    justify-items: center;
     align-items: center;
+    flex-direction: column;
 }
 
-/* Animação de flutuação */
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-        /* Posição inicial */
-    }
-
-    50% {
-        transform: translateY(-10px);
-        /* Subir 10px */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* Voltar para a posição inicial */
-    }
-}
-
-.large-card {
-    background-color: var(--color-card);
-    margin: 1rem;
-    height: 25rem;
-    width: 15rem;
-    animation: floating 2s ease-in-out infinite;
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px 0px 30px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.192);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: 3.5rem;
 }
 
 .card {
-    background-color: var(--color-card);
-    width: 25rem;
-    height: 11rem;
-    animation: floating 2s ease-in-out infinite;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px 0px 30px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.192);
-}
-
-/* Associando as áreas de grid */
-.large-card:nth-child(1) {
-    grid-area: left;
-}
-
-.large-card:nth-child(4) {
-    grid-area: right;
-}
-
-.contact-section {
-    width: 70%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "left top right"
-        "left bottom right";
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
-}
-
-/* Animação de flutuação */
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-        /* Posição inicial */
-    }
-
-    50% {
-        transform: translateY(-10px);
-        /* Subir 10px */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* Voltar para a posição inicial */
-    }
-}
-
-/* Estilo comum para todos os cards */
-.contact-large-card {
-    background-color: var(--color-card);
-    margin: 1rem;
-    height: 13rem;
-    width: 95%;
-    animation: floating 2s ease-in-out infinite;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px 0px 30px 0px;
-    margin-bottom: 6rem;
-    border: 1px solid rgba(0, 0, 0, 0.192);
-}
-
-/* Associando as áreas de grid */
-.contact-large-card:nth-child(1) {
-    grid-area: left;
-}
-
-.contact-card:nth-child(2) {
-    grid-area: top;
-}
-
-.contact-card:nth-child(3) {
-    grid-area: bottom;
-}
-
-.contact-large-card:nth-child(4) {
-    grid-area: right;
-}
-
-/* Estilo do Footer */
-.footer {
-    background-color: var(--header-color);
-    color: white;
+    background: white;
     padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 80%;
-    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 15px 0px 0px #000;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+.card h4 {
+    margin-left: 5rem;
 }
 
-.footer .social-links {
-    margin-top: 10px;
+.icon {
+    width: 2rem;
 }
 
-.footer .social-links a {
+footer {
+    padding: 10px;
     color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 18px;
+    text-align: center;
+    width: 100%;
 }
 
-.footer .social-links a:hover {
-    text-decoration: underline;
-}
-
-.card-image {
-    width: 10rem;
-    height: auto;
-    object-fit: cover;
-    margin: 1rem;
-}
-
-.card-image-simple {
-    width: 10rem;
-    height: auto;
-    object-fit: cover;
-    margin: 0.5rem;
-}
-
-/* Responsividade para tablets */
-@media (max-width: 1108px) {
-    .header {
-        width: 100%;
-        height: 12rem;
-        flex-direction: column;
-    }
-
-    .texts-header {
-        width: 80%;
-        margin-left: 2rem;
-        font-size: 26px;
-    }
-
-    .header-nav {
-        width: 50%;
-        margin-right: 2rem;
-    }
-
-    .header-nav a {
-        margin: 2rem;
-        font-size: 14px;
-        font-size: 30px;
-    }
-
-    .my-networks-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15rem;
-    }
-
-    .contact-section {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    .large-card,
-    .contact-large-card,
-    .card {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        padding: 1rem;
-        margin: 0;
-    }
-
-    .card {
-        margin: 0.6rem;
-    }
-}
-
-/* Responsividade para celulares */
-@media (max-width: 915px) {
-    .header {
-        height: 13rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .header-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .texts-header {
-        width: 100%;
-        margin-left: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .header-nav {
-        width: 100%;
-        display: flex;
-    }
-
-    .header-nav ul {
-        display: flex;
-    }
-
-    .header-nav a {
-        margin: 1rem;
-        font-size: 12px;
-        font-size: 26px;
-        display: flex;
-    }
-
-    .my-networks-container,
-    .contact-section {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .large-card,
-    .contact-large-card,
-    .card {
-        width: 90%;
-        /* Ocupará menos espaço lateralmente */
-        max-width: 250px;
-        /* Mantém um limite para não ficar muito grande */
-        height: auto;
-        /* Ajusta automaticamente */
-        aspect-ratio: 1 / 1;
-        /* Mantém um formato quadrado */
-        margin-bottom: 1rem;
-        /* Adiciona espaçamento entre os elementos */
-        padding: 1rem;
-    }
-
-    .card {
-        margin: 1rem;
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
