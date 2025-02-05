@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -8,7 +9,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Ubuntu Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +32,12 @@ body {
     z-index: 1000;
     border-radius: 25px;
     background: #242424;
+    transition: 0.5s ease;
+}
+
+.header:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -64,6 +74,13 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 10px 15px 0px 0px #000;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.1);
 }
 
 .card h4 {
