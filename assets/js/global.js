@@ -1,4 +1,3 @@
-// Adiciona faíscas ao clicar nos cartões
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', (e) => {
         for (let i = 0; i < 10; i++) {
@@ -15,7 +14,6 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-// CSS para as faíscas
 const style = document.createElement('style');
 style.innerHTML = `
     .sparkles {
@@ -35,17 +33,51 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// Efeito de gradiente seguindo o mouse
 document.addEventListener('mousemove', (e) => {
-    // Calcula a posição do mouse em porcentagem da tela
     const xPercent = (e.clientX / window.innerWidth) * 100;
     const yPercent = (e.clientY / window.innerHeight) * 100;
 
-    // Atualiza o gradiente no body
     document.body.style.background = `linear-gradient(${xPercent}deg, #000000, #ffffff)`;
 });
 
-// Detecta dispositivos móveis e mantém o gradiente estático
 if (/Mobi|Android/i.test(navigator.userAgent)) {
     document.body.style.background = 'linear-gradient(90deg, #000000, #ffffff)';
+}
+
+const snakesContainer = document.getElementById('snakes-container');
+
+function createSnakeEmoji() {
+  const snake = document.createElement('div');
+  snake.classList.add('snake-emoji');
+  snake.textContent = '🐍';
+
+  const startX = Math.random() * window.innerWidth;
+  const startY = Math.random() * window.innerHeight;
+
+  snake.style.left = `${startX}px`;
+  snake.style.top = `${startY}px`;
+
+  snakesContainer.appendChild(snake);
+
+  moveSnakeEmoji(snake); 
+}
+
+function moveSnakeEmoji(snake) {
+  function animate() {
+    const randomX = Math.random() * window.innerWidth;
+    const randomY = Math.random() * window.innerHeight;
+
+    snake.style.transition = `top ${0.8 + Math.random()}s ease-in-out, left ${0.8 + Math.random()}s ease-in-out`;
+    snake.style.left = `${randomX}px`;
+    snake.style.top = `${randomY}px`;
+
+    const nextMove = 1000 + Math.random() * 1000;
+    setTimeout(animate, nextMove);
+  }
+
+  animate();
+}
+
+for (let i = 0; i < 10; i++) {
+  createSnakeEmoji();
 }

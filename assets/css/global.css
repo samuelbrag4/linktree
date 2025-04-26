@@ -214,20 +214,11 @@ body::after {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .card {
-        width: 90%;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+.snake-emoji {
+    position: fixed;
+    font-size: 2rem; /* Tamanho do emoji */
+    z-index: -1; /* Fica atrás do conteúdo */
+    transition: top 0.5s linear, left 0.5s linear; /* Movimentos suaves */
 }
 
 @media (max-width: 480px) {
