@@ -1,48 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LinkTree</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/global.css">
-</head>
-<body>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/global.css" />
+  </head>
+  <body>
     <header class="header">
-        <section class="header-container">
-            <hgroup class="texts-header">
-                <h1>LinkTree</h1>
-                <h3>Samuel Braga</h3>
-            </hgroup>
-        </section>
+      <section class="header-container">
+        <img
+          src="https://avatars.githubusercontent.com/u/158165702?v=4"
+          alt="Perfil GitHub"
+          class="profile-pic"
+        />
+        <hgroup class="texts-header">
+          <h1>LinkTree</h1>
+          <h3>Samuel Braga</h3>
+        </hgroup>
+      </section>
     </header>
-    
+
     <section class="container">
-        <a class="card" href="https://github.com/samuelbrag4" target="_blank">
-            <img src="./assets/icons/github.png" alt="GitHub" class="icon">
-            <h4>GitHub</h4>
-        </a>
-        <a class="card" href="https://www.linkedin.com/in/samuelbrag4/" target="_blank">
-            <img src="./assets/icons/linkedin.png" alt="LinkedIn" class="icon">
-            <h4>LinkedIn</h4>
-        </a>
-        <a class="card" href="https://wa.me/5519996495638" target="_blank">
-            <img src="./assets/images/Whatsapp.png" alt="WhatsApp" class="icon">
-            <h4>WhatsApp</h4>
-        </a>
-        <a class="card" href="mailto:samuelbraga1306@gmail.com" target="_blank">
-            <img src="./assets/images/Gmail.png" alt="G-mail" class="icon">
-            <h4>G-mail</h4>
-        </a>
+      <a class="card" href="https://github.com/samuelbrag4" target="_blank">
+        <img src="./assets/icons/github.png" alt="GitHub" class="icon" />
+        <h4>GitHub</h4>
+      </a>
+      <a
+        class="card"
+        href="https://www.linkedin.com/in/samuelbrag4/"
+        target="_blank"
+      >
+        <img src="./assets/icons/linkedin.png" alt="LinkedIn" class="icon" />
+        <h4>LinkedIn</h4>
+      </a>
+      <a class="card" href="https://wa.me/5519996495638" target="_blank">
+        <img src="./assets/images/Whatsapp.png" alt="WhatsApp" class="icon" />
+        <h4>WhatsApp</h4>
+      </a>
+      <a class="card" href="mailto:samuelbraga1306@gmail.com" target="_blank">
+        <img src="./assets/images/Gmail.png" alt="G-mail" class="icon" />
+        <h4>G-mail</h4>
+      </a>
     </section>
-    
+
+    <section class="container">
+      <!-- Outros cards existentes -->
+
+      <div class="card books">
+        <h4>📚 Livros que estou lendo</h4>
+        <ul class="book-list">
+          <li>
+            <strong>1.</strong> O Cozer das pedras, o roer dos ossos — Patrick
+            Torres
+          </li>
+          <li>
+            <strong>2.</strong> Entendendo Algoritmos — Aditya Y. Bhargava
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container">
+      <h3 class="section-title">💼 Meus Projetos</h3>
+
+      <div class="projects-grid">
+        <!-- Projeto Frontend 1 -->
+        <a
+          href="https://clean-website-lake.vercel.app/"
+          class="project-card"
+          target="_blank"
+        >
+          <h4>🧴 Loja de Cosméticos</h4>
+          <p>
+            E-commerce focado em skincare, feito com React + animações leves.
+          </p>
+        </a>
+
+        <!-- Projeto Frontend 2 -->
+        <a
+          href="https://portal-de-materias.vercel.app/"
+          class="project-card"
+          target="_blank"
+        >
+          <h4>🧪 Portal de Química</h4>
+          <p>
+            Site educacional feito com Next.js, ideal pra estudar de forma
+            prática.
+          </p>
+        </a>
+
+        <!-- Projeto Backend 1 -->
+        <a
+          href="https://github.com/samuelbrag4/auto-email"
+          class="project-card"
+          target="_blank"
+        >
+          <h4>📨 Envio de E-mail Automático</h4>
+          <p>
+            Script em Python que envia e-mails em massa com SMTP e
+            personalização.
+          </p>
+        </a>
+
+        <!-- Projeto Backend 2 -->
+        <a
+          href="https://github.com/samuelbrag4/biblioteca-api"
+          class="project-card"
+          target="_blank"
+        >
+          <h4>📚 API de Biblioteca</h4>
+          <p>API REST com Express e MongoDB para gerenciamento de livros.</p>
+        </a>
+      </div>
+    </section>
+
     <footer class="footer">
-        <p>&copy; 2025 Samuel Braga - Todos os direitos reservados</p>
-        <p>Feito com ❤️ e ☕</p>
+      <p>&copy; 2025 Samuel Braga - Todos os direitos reservados</p>
+      <p>Feito com ❤️ e ☕</p>
     </footer>
 
     <script src="assets/js/global.js"></script>
-</body>
+  </body>
 </html>

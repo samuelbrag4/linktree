@@ -1,3 +1,4 @@
+// Adiciona faíscas ao clicar nos cartões
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', (e) => {
         for (let i = 0; i < 10; i++) {
@@ -33,3 +34,18 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+// Efeito de gradiente seguindo o mouse
+document.addEventListener('mousemove', (e) => {
+    // Calcula a posição do mouse em porcentagem da tela
+    const xPercent = (e.clientX / window.innerWidth) * 100;
+    const yPercent = (e.clientY / window.innerHeight) * 100;
+
+    // Atualiza o gradiente no body
+    document.body.style.background = `linear-gradient(${xPercent}deg, #000000, #ffffff)`;
+});
+
+// Detecta dispositivos móveis e mantém o gradiente estático
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.body.style.background = 'linear-gradient(90deg, #000000, #ffffff)';
+}
